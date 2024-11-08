@@ -40,8 +40,15 @@ header {
         padding-right: 20px; 
         padding-top: 0;
     }
+
+    .header span img {
+  
+      max-width: 100px; 
+      height: auto;
+    }
     a {
         font-weight: bold;
+        
     }
     a, ul {
         text-decoration: none;
@@ -88,14 +95,26 @@ header {
 }
 
 
+
+
 // Main Hero page styles
 .body{
-  background-image: url(http://localhost:3000/assets/img/background.png) !important;
+  
   background-size: cover;
   background-position:top right;
   background-repeat: no-repeat;
   background-size: 70%;
  
+  #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire area */
+    z-index: -1; /* Keeps the video behind other content */
+    
+  }
 }
 @mixin button-style {
   padding: 10px 25px;
@@ -113,6 +132,7 @@ header {
   justify-content: center;  
   align-items: center;      
   height: 100vh; 
+  z-index: 1;
 }
 .glide {
   width: 80%;  
@@ -121,15 +141,19 @@ header {
   margin-right: auto;  
   padding: 20px;  
   position: relative;
+  display: block; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center;
   .glide__slides {
     .glide__slide {
       img {
      
-        width: 50%; 
+        width: 100%; 
         height: auto; 
-        max-width: 500px; 
-        max-height: 300px;
-        border-radius: 20px; 
+        max-width: 1350px; 
+        max-height: 500px;
+        border-radius: 0px; 
         object-fit: cover; 
       }
     }
@@ -167,78 +191,51 @@ header {
     margin: 0 auto 40px;
   }
 
-  .features-grid {
+  .sections-grid {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
 
-    .feature-card {
+    .sections-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       background-color: #fff;
       border: none;
-      border-radius: 12px;
       padding: 20px;
-      max-width: 220px;
-    
+      max-width: 280px;
       flex: 1 1 calc(25% - 20px);
-
-      .feature-icon {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        left: 0; 
-        top: 20px; 
-        transform: none; 
-        margin: 0; 
-        margin-bottom: 15px;
-
+      border-radius: 5px;
+      
+      .sections-img {
+        max-width: 200px; 
+        height: 300px; 
+        border-radius: 0px; 
+        padding-bottom: 10px;
+        object-fit: cover;
         
-        img {
-          width: 100%;
-          height: auto;
-        }
-
-        &.pink {
-          background-color: $pink-color;
-        }
-        &.blue {
-          background-color: $blue-color;
-        }
-        &.purple {
-          background-color: $black-color;
-        }
-        &.green {
-          background-color: $dark-green-color;
-        }
       }
+      
+      
 
-      h3 {
-        font-size: 24px;
-        margin-bottom: 10px;
-        color: #2d3436;
-        font-weight: 700;
-      }
-
-      p {
-        font-size: 18px;
-        font-weight: 400;
-        color: #636e72;
-        margin-bottom: 20px;
-      }
-
-      .learn-more-btn {
-        background-color: transparent;
-        border: 1px solid $light-grey-color;
-        border-radius: 30px;
+      .explore-btn {
+        display: block;
+        margin: 0 auto;
+        width: fit-content; 
         padding: 10px 20px;
-        color: #6c5ce7;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s ease, color 0.3s ease;
-
+        text-align: center;
+        background-color: $red-highlight-color; 
+        color: white; 
+        border-radius: 5px; 
+        border: none; 
+        transition: transform 0.3s ease-in-out;
+      
         &:hover {
-          background-color: #6c5ce7;
+          scale: 1,1;
           color: white;
+          transform: scale(1.1);
         }
       }
     }
@@ -393,7 +390,7 @@ header {
 
   @media (max-width: 768px) {
     .body{
-      background-image: url(http://localhost:3000/assets/img/wave.png) !important;
+      
       background-size: cover;
       background-position:top right;
       background-repeat: no-repeat;
@@ -509,15 +506,24 @@ header {
     }
   }
 
-  .features-grid {
+  .sections-grid {
   
     display: grid;
     grid-template-columns: repeat(2, 2fr);
     
-    .feature-card {
+    .sections-card {
       max-width: 100%; 
       margin-bottom: 20px;
+      .sections-img {
+        object-fit: cover;
+        max-width: 420px; 
+        height: auto; 
+        border-radius: 0px; 
+        padding-bottom: 10px;
+      }
     }
+   
+    
   }
   .purple-span{
     color: $black-color;

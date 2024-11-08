@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.2",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "lightbox2": "^2.11.5",
+    "video.js": "^8.19.1"
   }
 }

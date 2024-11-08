@@ -68,6 +68,10 @@ header .container {
   padding-right: 20px;
   padding-top: 0;
 }
+header .header span img {
+  max-width: 100px;
+  height: auto;
+}
 header a {
   font-weight: bold;
 }
@@ -106,11 +110,19 @@ header #burger {
 }
 
 .body {
-  background-image: url(http://localhost:3000/assets/img/background.png) !important;
   background-size: cover;
   background-position: top right;
   background-repeat: no-repeat;
   background-size: 70%;
+}
+.body #background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire area */
+  z-index: -1; /* Keeps the video behind other content */
 }
 
 .glide-container {
@@ -118,6 +130,7 @@ header #burger {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  z-index: 1;
 }
 
 .glide {
@@ -127,13 +140,17 @@ header #burger {
   margin-right: auto;
   padding: 20px;
   position: relative;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .glide .glide__slides .glide__slide img {
-  width: 50%;
+  width: 100%;
   height: auto;
-  max-width: 500px;
-  max-height: 300px;
-  border-radius: 20px;
+  max-width: 1350px;
+  max-height: 500px;
+  border-radius: 0px;
   object-fit: cover;
 }
 
@@ -157,71 +174,47 @@ header #burger {
   color: #636e72;
   margin: 0 auto 40px;
 }
-.designs-section .features-grid {
+.designs-section .sections-grid {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
 }
-.designs-section .features-grid .feature-card {
+.designs-section .sections-grid .sections-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #fff;
   border: none;
-  border-radius: 12px;
   padding: 20px;
-  max-width: 220px;
+  max-width: 280px;
   flex: 1 1 calc(25% - 20px);
+  border-radius: 5px;
 }
-.designs-section .features-grid .feature-card .feature-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  left: 0;
-  top: 20px;
-  transform: none;
-  margin: 0;
-  margin-bottom: 15px;
+.designs-section .sections-grid .sections-card .sections-img {
+  max-width: 200px;
+  height: 300px;
+  border-radius: 0px;
+  padding-bottom: 10px;
+  object-fit: cover;
 }
-.designs-section .features-grid .feature-card .feature-icon img {
-  width: 100%;
-  height: auto;
-}
-.designs-section .features-grid .feature-card .feature-icon.pink {
-  background-color: #e84393;
-}
-.designs-section .features-grid .feature-card .feature-icon.blue {
-  background-color: #0984E3;
-}
-.designs-section .features-grid .feature-card .feature-icon.purple {
-  background-color: #000000;
-}
-.designs-section .features-grid .feature-card .feature-icon.green {
-  background-color: #00B894;
-}
-.designs-section .features-grid .feature-card h3 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #2d3436;
-  font-weight: 700;
-}
-.designs-section .features-grid .feature-card p {
-  font-size: 18px;
-  font-weight: 400;
-  color: #636e72;
-  margin-bottom: 20px;
-}
-.designs-section .features-grid .feature-card .learn-more-btn {
-  background-color: transparent;
-  border: 1px solid #ADADAD;
-  border-radius: 30px;
+.designs-section .sections-grid .sections-card .explore-btn {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
   padding: 10px 20px;
-  color: #6c5ce7;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-.designs-section .features-grid .feature-card .learn-more-btn:hover {
-  background-color: #6c5ce7;
+  text-align: center;
+  background-color: #D63030;
   color: white;
+  border-radius: 5px;
+  border: none;
+  transition: transform 0.3s ease-in-out;
+}
+.designs-section .sections-grid .sections-card .explore-btn:hover {
+  scale: 1, 1;
+  color: white;
+  transform: scale(1.1);
 }
 
 .footer {
@@ -340,7 +333,6 @@ header #burger {
 
 @media (max-width: 768px) {
   .body {
-    background-image: url(http://localhost:3000/assets/img/wave.png) !important;
     background-size: cover;
     background-position: top right;
     background-repeat: no-repeat;
@@ -429,13 +421,20 @@ header #burger {
     border: none;
     border-radius: 5px;
   }
-  .features-grid {
+  .sections-grid {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
   }
-  .features-grid .feature-card {
+  .sections-grid .sections-card {
     max-width: 100%;
     margin-bottom: 20px;
+  }
+  .sections-grid .sections-card .sections-img {
+    object-fit: cover;
+    max-width: 420px;
+    height: auto;
+    border-radius: 0px;
+    padding-bottom: 10px;
   }
   .purple-span {
     color: #000000;
