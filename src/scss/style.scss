@@ -108,7 +108,12 @@ header {
   box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
+.glide-container{
+  display: flex;
+  justify-content: center;  
+  align-items: center;      
+  height: 100vh; 
+}
 .glide {
   width: 80%;  
   max-width: 1400px; 

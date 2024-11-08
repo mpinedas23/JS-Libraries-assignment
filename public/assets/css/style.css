@@ -113,6 +113,13 @@ header #burger {
   background-size: 70%;
 }
 
+.glide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .glide {
   width: 80%;
   max-width: 1400px;
