@@ -55,7 +55,7 @@
 }
 
 body {
-  background-color: #f5f1ec;
+  background-color: white;
   font-family: "Poppins", serif !important;
 }
 
@@ -109,28 +109,51 @@ header #burger {
   display: none;
 }
 
-.body {
-  background-size: cover;
-  background-position: top right;
-  background-repeat: no-repeat;
-  background-size: 70%;
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-bottom: 40px;
 }
-.body #background-video {
+.hero-section .background-video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures the video covers the entire area */
-  z-index: -1; /* Keeps the video behind other content */
+  opacity: 0.8;
+  object-fit: cover;
+  z-index: -1;
+}
+.hero-section .overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+.hero-section .overlay-text h1 {
+  font-weight: 600;
+  font-size: 42px;
 }
 
 .glide-container {
+  position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  height: 100vh;
-  z-index: 1;
+}
+.glide-container h1 {
+  margin-bottom: 20px;
+  color: #D63030;
+  text-align: center;
+  font-weight: 600;
+}
+.glide-container p {
+  max-width: 1100px;
 }
 
 .glide {
@@ -153,6 +176,9 @@ header #burger {
   border-radius: 0px;
   object-fit: cover;
 }
+.glide .glide__arrows {
+  border: none;
+}
 
 .grid-container {
   display: grid;
@@ -163,16 +189,6 @@ header #burger {
 
 .designs-section {
   padding: 40px 100px;
-}
-.designs-section h2 {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.designs-section .description {
-  font-size: 18px;
-  color: #636e72;
-  margin: 0 auto 40px;
 }
 .designs-section .sections-grid {
   display: flex;
@@ -185,15 +201,20 @@ header #burger {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: #f5f1ec;
   border: none;
   padding: 20px;
   max-width: 280px;
+  height: 420px;
   flex: 1 1 calc(25% - 20px);
   border-radius: 5px;
 }
+.designs-section .sections-grid .sections-card h3 {
+  font-weight: 550;
+  font-size: 20px;
+}
 .designs-section .sections-grid .sections-card .sections-img {
-  max-width: 200px;
+  max-width: 220px;
   height: 300px;
   border-radius: 0px;
   padding-bottom: 10px;
@@ -331,7 +352,7 @@ header #burger {
   font-weight: 700;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .body {
     background-size: cover;
     background-position: top right;
@@ -350,13 +371,6 @@ header #burger {
   .highlight-desktop {
     display: none;
   }
-  .highlight-mobile {
-    color: #D63030;
-    background-color: #54EFC4;
-    padding: 5px;
-    border-radius: 50px;
-    display: inline-flex;
-  }
   .header-desktop-text {
     display: none;
   }
@@ -366,81 +380,8 @@ header #burger {
     padding: 10px;
     text-shadow: 0 2px 0.3px #fff;
   }
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(6, 0.5fr);
-    gap: 25px;
-  }
-  .left-text {
-    grid-column: span 2;
-  }
-  .image-title-green-block {
-    grid-column: 3/5;
-    grid-row: 2/4;
-    grid-column: span 2;
-  }
-  .image-title-green-block .green-desktop-text {
-    display: none;
-  }
-  .image-title-green-block .green-mobile-text {
-    z-index: 2;
-    color: white !important;
-    font-size: 36px;
-    font-weight: 700;
-    text-shadow: 0 2px 0.3px black;
-  }
-  .image-title-green-block img {
-    text-align: center;
-    max-width: 224px;
-    max-height: 183px;
-    display: flex;
-    overflow: hidden;
-    z-index: 1;
-  }
-  .right-text {
-    grid-column: span 2;
-  }
-  .right-text p {
-    font-size: 1rem;
-  }
-  .middle-block-lilac img, .small-image-blue-block img, .bottom-block img {
-    width: 100%;
-  }
-  .bottom-block.yellow p, .bottom-block.pink p, .bottom-block.purple p, .bottom-block.red p {
-    font-size: 0.9rem;
-  }
-  .button-block {
-    grid-column: span 2;
-  }
-  .button-block button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  .sections-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-  }
-  .sections-grid .sections-card {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-  .sections-grid .sections-card .sections-img {
-    object-fit: cover;
-    max-width: 420px;
-    height: auto;
-    border-radius: 0px;
-    padding-bottom: 10px;
-  }
-  .purple-span {
-    color: #000000;
-  }
-  .emojis {
-    display: none;
+  .glide-container p {
+    max-width: 600px;
   }
   .contact-form {
     display: none;

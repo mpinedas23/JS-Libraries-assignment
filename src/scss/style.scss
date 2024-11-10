@@ -7,7 +7,6 @@ $body-color: #f5f1ec;
 $yellow-color: #FDCB6E;
 $black-color: #000000;
 $red-highlight-color:#D63030;
-$green-highlight-color:#54EFC4;
 $red-color:#FF7675;
 $lilac-color: #A29BFE;
 $pink-color: #e84393;
@@ -23,7 +22,7 @@ $form-grey-color: #C2C2C2;
 
 
 body {
-    background-color: $body-color;
+    background-color:white;
     font-family: $font-inter !important;
    
 }
@@ -97,43 +96,60 @@ header {
 
 
 
-// Main Hero page styles
-.body{
+//  Hero styles (video.js)
+
+
+.hero-section {
+  position: relative;  
+  width: 100%;
+  height: 500px;  
+  margin-bottom: 40px;
   
-  background-size: cover;
-  background-position:top right;
-  background-repeat: no-repeat;
-  background-size: 70%;
- 
-  #background-video {
+  .background-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the video covers the entire area */
-    z-index: -1; /* Keeps the video behind other content */
-    
+    opacity: 0.8; 
+    object-fit: cover; 
+    z-index: -1; 
+  }
+
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1; 
+    h1{
+      font-weight: 600;
+      font-size: 42px;
+    }
   }
 }
-@mixin button-style {
-  padding: 10px 25px;
-  font-size: 24px;
-  color: white;
-  font-weight: 700;
-  background-color: $black-color;
-  border: none;
-  border-radius: 50px;
-  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
+
+// glide js styles
+.glide-container {
+  position: relative;  
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-start;  
+  align-items: center;  
+  
+  h1 {
+    margin-bottom: 20px; 
+    color: $red-highlight-color;
+    text-align: center;
+    font-weight: 600;
+  }
+  p{
+    max-width: 1100px;
+  }
 }
 
-.glide-container{
-  display: flex;
-  justify-content: center;  
-  align-items: center;      
-  height: 100vh; 
-  z-index: 1;
-}
 .glide {
   width: 80%;  
   max-width: 1400px; 
@@ -145,10 +161,10 @@ header {
   flex-direction: column; 
   align-items: center; 
   justify-content: center;
+  
   .glide__slides {
     .glide__slide {
       img {
-     
         width: 100%; 
         height: auto; 
         max-width: 1350px; 
@@ -158,7 +174,11 @@ header {
       }
     }
   }
+  .glide__arrows{
+    border: none;
+  }
 }
+
 
 .grid-container {
   
@@ -168,29 +188,11 @@ header {
     gap:25px;
   
   }
- 
 
-
-
-  //Delivering good designs 
 
   .designs-section {
   
   padding: 40px 100px;
-
-  h2 {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  .description {
-    font-size: 18px;
-    color: #636e72;
-  
-    margin: 0 auto 40px;
-  }
-
   .sections-grid {
     display: flex;
     justify-content: space-between;
@@ -202,15 +204,20 @@ header {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: #fff;
+      background-color: $body-color;
       border: none;
       padding: 20px;
       max-width: 280px;
+      height: 420px;
       flex: 1 1 calc(25% - 20px);
       border-radius: 5px;
+      h3{
+        font-weight: 550;
+        font-size: 20px;
+      }
       
       .sections-img {
-        max-width: 200px; 
+        max-width: 220px; 
         height: 300px; 
         border-radius: 0px; 
         padding-bottom: 10px;
@@ -218,8 +225,6 @@ header {
         
       }
       
-      
-
       .explore-btn {
         display: block;
         margin: 0 auto;
@@ -388,7 +393,7 @@ header {
 
   // mobile view
 
-  @media (max-width: 768px) {
+  @media (max-width: 850px) {
     .body{
       
       background-size: cover;
@@ -412,13 +417,7 @@ header {
       display: none;
     }
 
-    .highlight-mobile{
-      color: $red-highlight-color;
-      background-color:$green-highlight-color ;
-      padding: 5px;
-      border-radius: 50px;
-      display: inline-flex;
-    }
+   
     .header-desktop-text{
       display: none;
     }
@@ -431,106 +430,18 @@ header {
 
 
 
-  //GRID
-  .grid-container{
-    display: grid;
-    grid-template-columns: repeat(7, 1fr); 
-    grid-template-rows: repeat(6, 0.5fr);
-    gap: 25px;
+  .glide-container {
+    
+    
+    
+    
+    p{
+      max-width: 600px;
+    }
   }
   
 
-  .left-text {
-    grid-column: span 2;
-    
-  }
-
-  .image-title-green-block {
-    grid-column: 3 / 5;
-    grid-row: 2 / 4;
-    grid-column: span 2;
-    .green-desktop-text{
-      display: none;
-    }
-    .green-mobile-text{
-      z-index: 2;
-      color: white !important;
-      font-size: 36px;
-      font-weight: 700;
-      text-shadow: 0 2px 0.3px black;
-    }
-    img {
-  
-      text-align: center;
-      max-width: 224px;
-      max-height: 183px;
-      display: flex;
-      overflow: hidden;
-      z-index: 1;
-    }
-  }
-
-  .right-text {
-    grid-column: span 2;
-    p {
-      font-size: 1rem;
-    }
-  }
-
-  .middle-block-lilac, .small-image-blue-block, .bottom-block {
-    img {
-      width: 100%;
-    }
-  }
-
-  .bottom-block {
-    &.yellow, &.pink, &.purple, &.red {
-      p {
-        font-size: 0.9rem;
-      }
-      img {
-        
-      }
-    }
-  }
-
-  .button-block {
-    grid-column: span 2;
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 5px;
-    }
-  }
-
-  .sections-grid {
-  
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    
-    .sections-card {
-      max-width: 100%; 
-      margin-bottom: 20px;
-      .sections-img {
-        object-fit: cover;
-        max-width: 420px; 
-        height: auto; 
-        border-radius: 0px; 
-        padding-bottom: 10px;
-      }
-    }
-   
-    
-  }
-  .purple-span{
-    color: $black-color;
-  }
-  .emojis{
-    display: none;
-  }
+ 
  .contact-form{
   display: none;
 }

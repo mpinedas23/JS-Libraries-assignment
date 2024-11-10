@@ -65,81 +65,84 @@
     
  
 
-  <!--Main Hero section-->
-<div class="body">
-  
-<!-- Glide JS -->
-<div class=".glide-container">
-    <video
-    id="background-video"
-    class="video-js vjs-default-skin"
-    autoplay
-    muted
-    loop
-    playsinline
-    data-setup='{}'>
-    <source src="assets/img/BG video callgaris.mp4" type="video4">
+  <!--Main Hero section VIDEO JS-->
+  <div class="hero-section">
+    <div class="video-container">
+      <video class="background-video" 
+          autoplay muted loop playsinline data-setup='{}'>
+          <source src="assets/img/BG video callgaris.mp4" type="video/mp4">
+      </video>
+      <div class="overlay-text">
+          <h1>Capsule Collection 2024</h1>
+          <p>Nature reveals itself in every detail, among iconic shapes and authentic materials</p>
+      </div>
+    </div>
+  </div>
+  <!-- Glide JS -->
+  <div class="glide-container">
     
-  </video>
-  <div class="glide">
-    <div class="glide__track" data-glide-el="track">
-      <ul class="glide__slides">
-        <li class="glide__slide"><img src="assets/img/dining table.jpg"></li>
-        <li class="glide__slide"><img src="assets/img/dining table 2.jpg"></li>
-        <li class="glide__slide"><img src="assets/img/living room couch.jpg"></li>
-        <li class="glide__slide"><img src="assets/img/dining table 3.jpg"></li>
-        <li class="glide__slide"><img src="assets/img/bedroom 1.jpg"></li>
-        <li class="glide__slide"><img src="assets/img/sofa 1.jpg"></li>
-      </ul>
-    </div>
-    <div class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
-      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
-    </div>
-  </div>
-</div>
-
-
-  <!--Delivering good designs -->
-  <div class="designs-section">
-  
-    <div class="sections-grid">
-      <div class="sections-card">
-        
-        <h3>Bedroom</h3>
-        <a href="assets/img/bed-section.jpg" data-lightbox="sections-gallery" data-title="Bedroom Image">
-          <img class="sections-img" src="assets/img/bed-section.jpg" alt="Bedroom Image">
-        </a>
-        <button class="explore-btn">Explore</button>
+    <h1>It all starts from home...</h1>
+    <p>Since 1923, we have been producing functional and elegant furniture, because we believe that beauty, functionality, and quality can coexist in every product we make.</p>
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide"><img src="assets/img/dining table.jpg"></li>
+          <li class="glide__slide"><img src="assets/img/dining table 2.jpg"></li>
+          <li class="glide__slide"><img src="assets/img/living room couch.jpg"></li>
+          <li class="glide__slide"><img src="assets/img/dining table 3.jpg"></li>
+          <li class="glide__slide"><img src="assets/img/bedroom 1.jpg"></li>
+          <li class="glide__slide"><img src="assets/img/sofa 1.jpg"></li>
+        </ul>
       </div>
-      
-      <div class="sections-card">
-        
-        <h3>Living room</h3>
-        <a href="assets/img/living room promo.jpg" data-lightbox="sections-gallery" data-title="Living room Image">
-          <img class="sections-img" src="assets/img/living room promo.jpg" alt="Living room Image">
-        </a>        <button class="explore-btn">Explore</button>
-      </div>
-      
-      <div class="sections-card">
-        
-        <h3>Dining room</h3>
-        <a href="assets/img/dining room promo.jpg" data-lightbox="sections-gallery" data-title="Dining Room Image">
-          <img class="sections-img" src="assets/img/dining room promo.jpg" alt="Dining Room Image">
-        </a>
-        <button class="explore-btn">Explore</button>
-      </div>
-  
-      <div class="sections-card">
-      
-        <h3>Ocassional Furniture</h3>
-        <a href="assets/img/ocassional furniture.png" data-lightbox="sections-gallery" data-title="Ocassional Furniture">
-          <img class="sections-img" src="assets/img/ocassional furniture.png" alt="Ocassional Furniture">
-        </a>
-        <button class="explore-btn">Explore</button>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><img src="assets/img/icon-chevron-left.svg"></button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><img src="assets/img/icon-chevron-right.svg"></button>
       </div>
     </div>
   </div>
+
+
+    <!--spaces cards LIGHTBOX JS -->
+    <div class="designs-section">
+    
+      <div class="sections-grid">
+        <div class="sections-card">
+          
+          <h3>Bedroom</h3>
+          <a href="assets/img/bed-section.jpg" data-lightbox="sections-gallery" data-title="Bedroom Image">
+            <img class="sections-img" src="assets/img/bed-section.jpg" alt="Bedroom Image">
+          </a>
+          <button class="explore-btn">Explore</button>
+        </div>
+        
+        <div class="sections-card">
+          
+          <h3>Living room</h3>
+          <a href="assets/img/living room promo.jpg" data-lightbox="sections-gallery" data-title="Living room Image">
+            <img class="sections-img" src="assets/img/living room promo.jpg" alt="Living room Image">
+          </a>        <button class="explore-btn">Explore</button>
+        </div>
+        
+        <div class="sections-card">
+          
+          <h3>Dining room</h3>
+          <a href="assets/img/dining room promo.jpg" data-lightbox="sections-gallery" data-title="Dining Room Image">
+            <img class="sections-img" src="assets/img/dining room promo.jpg" alt="Dining Room Image">
+          </a>
+          <button class="explore-btn">Explore</button>
+        </div>
+    
+        <div class="sections-card">
+        
+          <h3>Ocassional Furniture</h3>
+          <a href="assets/img/ocassional furniture.png" data-lightbox="sections-gallery" data-title="Ocassional Furniture">
+            <img class="sections-img" src="assets/img/ocassional furniture.png" alt="Ocassional Furniture">
+          </a>
+          <button class="explore-btn">Explore</button>
+        </div>
+      </div>
+    </div>
+  <div class="body"></div>
 <!--footer-->
 <footer class="footer">
   <div class="footer-container">
