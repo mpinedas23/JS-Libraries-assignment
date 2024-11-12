@@ -258,6 +258,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    
+
+    img{
+      max-width: 200px;
+      padding-bottom: 30px;
+      height: auto;
+    }
 //mobile layout for footer
     @media (max-width: 768px) {
       flex-direction: column;
@@ -269,6 +276,7 @@ header {
   .footer-section {
     flex: 1;
     margin: 0 10px;
+
 
     &.info-links {
       display: flex;
@@ -330,7 +338,7 @@ header {
         display: inline-block;
         
         img {
-          width: 32px;
+          width: 50px;
           height: auto;
         }
       }
@@ -352,25 +360,47 @@ header {
       display: flex;
       flex-direction: column;
       gap: 10px;
-
+    
       .form-group {
         display: flex;
-        gap: 10px;
         flex-direction: column;
+        gap: 10px;
         align-items: stretch;
-
+    
+        // Styling for all input elements
         input {
           padding: 10px;
           border: none;
-           background-color: $form-grey-color;
+          background-color: $form-grey-color;
           border-radius: 15px;
           font-size: 16px;
         }
-
-        .leave-message{
+    
+        .leave-message {
           color: $black-color;
         }
+    
+        .phone-input {
+          display: flex;
+          gap: 10px;
+          
+          .phone {
+            width: 90%; 
+          }
+        
+          select {
+            width: 10%; 
+            padding: 10px;
+            border: none;
+            background-color: $red-highlight-color;
+            border-radius: 15px;
+            font-size: 16px;
+            color: white;
+          }
+        }
       }
+    
+    
 
       .send-btn {
         padding: 10px 20px;

@@ -248,6 +248,11 @@ header #burger {
   justify-content: space-between;
   align-items: flex-start;
 }
+.footer .footer-container img {
+  max-width: 200px;
+  padding-bottom: 30px;
+  height: auto;
+}
 @media (max-width: 768px) {
   .footer .footer-container {
     flex-direction: column;
@@ -309,7 +314,7 @@ header #burger {
   display: inline-block;
 }
 .footer .social-media ul li a img {
-  width: 32px;
+  width: 50px;
   height: auto;
 }
 .footer .info-links ul {
@@ -328,8 +333,8 @@ header #burger {
 }
 .footer .contact-form form .form-group {
   display: flex;
-  gap: 10px;
   flex-direction: column;
+  gap: 10px;
   align-items: stretch;
 }
 .footer .contact-form form .form-group input {
@@ -341,6 +346,22 @@ header #burger {
 }
 .footer .contact-form form .form-group .leave-message {
   color: #000000;
+}
+.footer .contact-form form .form-group .phone-input {
+  display: flex;
+  gap: 10px;
+}
+.footer .contact-form form .form-group .phone-input .phone {
+  width: 90%;
+}
+.footer .contact-form form .form-group .phone-input select {
+  width: 10%;
+  padding: 10px;
+  border: none;
+  background-color: #D63030;
+  border-radius: 15px;
+  font-size: 16px;
+  color: white;
 }
 .footer .contact-form form .send-btn {
   padding: 10px 20px;
